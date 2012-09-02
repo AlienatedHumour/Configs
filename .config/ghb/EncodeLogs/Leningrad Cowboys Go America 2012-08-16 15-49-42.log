@@ -1,0 +1,134 @@
+Handbrake Version: rev4860 (2012071899)
+
+** (ghb:23884): WARNING **: Inhibit failed: The name org.freedesktop.PowerManagement was not provided by any .service files
+[15:49:42] hb_scan: path=/home/zach/ssh-mount/torrents/complete/Aki Kaurismaki - Leningrad Cowboys Go America  (1989)/VIDEO_TS, title_index=1
+libbluray/bdnav/index_parse.c:157: indx_parse(): error opening /home/zach/ssh-mount/torrents/complete/Aki Kaurismaki - Leningrad Cowboys Go America  (1989)/VIDEO_TS/BDMV/index.bdmv
+libbluray/bluray.c:1471: nav_get_title_list(/home/zach/ssh-mount/torrents/complete/Aki Kaurismaki - Leningrad Cowboys Go America  (1989)/VIDEO_TS) failed (0x7f9cdc016a00)
+[15:49:42] bd: not a bd - trying as a stream/file instead
+libdvdnav: Using dvdnav version 4.1.3
+libdvdread: Using libdvdcss version 1.2.12 for DVD access
+libdvdread: Couldn't find device name.
+libdvdnav: Can't read name block. Probably not a DVD-ROM device.
+libdvdnav: Unable to find map file '/home/zach/.dvdnav/.map'
+libdvdnav: DVD disk reports itself with Region mask 0x00000000. Regions: 1 2 3 4 5 6 7 8
+libdvdread: Using libdvdcss version 1.2.12 for DVD access
+libdvdread: Couldn't find device name.
+[15:49:42] scan: DVD has 5 title(s)
+[15:49:42] scan: scanning title 1
+[15:49:42] scan: opening IFO for VTS 1
+[15:49:42] scan: duration is 01:15:39 (4539250 ms)
+[15:49:42] pgc_id: 1, pgn: 1: pgc: 0x7f9cdc0218c0
+[15:49:42] scan: vts=1, ttn=1, cells=0->8, blocks=0->2149067, 2149068 blocks
+[15:49:42] scan: checking audio 1
+[15:49:42] scan: id=0x80bd, lang=Suomi (AC3), 3cc=fin ext=0
+[15:49:42] scan: checking subtitle 1
+[15:49:42] scan: id=0x20bd, lang=Espanol, 3cc=spa
+[15:49:42] scan: checking subtitle 2
+[15:49:42] scan: id=0x21bd, lang=English, 3cc=eng
+[15:49:42] scan: checking subtitle 3
+[15:49:42] scan: id=0x22bd, lang=Francais, 3cc=fra
+[15:49:42] scan: checking subtitle 4
+[15:49:42] scan: id=0x23bd, lang=Deutsch, 3cc=deu
+[15:49:42] scan: checking subtitle 5
+[15:49:42] scan: id=0x24bd, lang=Italiano, 3cc=ita
+[15:49:42] scan: checking subtitle 6
+[15:49:42] scan: id=0x25bd, lang=Portugues, 3cc=por
+[15:49:42] scan: title 1 has 8 chapters
+[15:49:42] scan: chap 1 c=0->0, b=0->198727 (198728), 442194 ms
+[15:49:42] scan: chap 2 c=1->1, b=198728->558657 (359930), 761206 ms
+[15:49:42] scan: chap 3 c=2->2, b=558658->827149 (268492), 563305 ms
+[15:49:42] scan: chap 4 c=3->3, b=827150->1133415 (306266), 641295 ms
+[15:49:42] scan: chap 5 c=4->4, b=1133416->1425311 (291896), 608166 ms
+[15:49:42] scan: chap 6 c=5->5, b=1425312->1777106 (351795), 734469 ms
+[15:49:42] scan: chap 7 c=6->6, b=1777107->1961805 (184699), 386139 ms
+[15:49:42] scan: chap 8 c=7->8, b=1961806->2149067 (187262), 402473 ms
+[15:49:42] scan: aspect = 0
+[15:49:42] scan: decoding previews for title 1
+libdvdnav: DVD disk reports itself with Region mask 0x00000000. Regions: 1 2 3 4 5 6 7 8
+[15:49:42] scan: title angle(s) 1
+[15:49:42] scan: audio 0x80bd: AC-3, rate=48000Hz, bitrate=256000 Suomi (AC3) (2.0 ch)
+[15:49:42] scan: 10 previews, 720x576, 25.000 fps, autocrop = 10/12/2/0, aspect 16:9, PAR 64:45
+[15:49:42] scan: title (0) job->width:720, job->height:384
+[15:49:42] libhb: scan thread found 1 valid title(s)
+[15:49:45] gtkgui: Modified Preset: Regular->Normal
+[15:49:45] 1 job(s) to process
+[15:49:45] starting job
+[15:49:45] sync: expecting 113481 video frames
+[15:49:45] job configuration:
+[15:49:45]  * source
+[15:49:45]    + /home/zach/ssh-mount/torrents/complete/Aki Kaurismaki - Leningrad Cowboys Go America  (1989)/VIDEO_TS
+[15:49:45]    + title 1, chapter(s) 1 to 8
+[15:49:45]  * destination
+[15:49:45]    + /home/zach/Leningrad Cowboys Go America.mkv
+[15:49:45]    + container: Matroska (.mkv)
+[15:49:45]      + chapter markers
+[15:49:45]  * video track
+[15:49:45]    + decoder: mpeg2
+[15:49:45]      + bitrate 9600 kbps
+[15:49:45]    + frame rate: same as source (around 25.000 fps)
+[15:49:45]    + strict anamorphic
+[15:49:45]      + storage dimensions: 720 * 576 -> 718 * 554, crop 10/12/2/0, mod 2
+[15:49:45]      + pixel aspect ratio: 64 / 45
+[15:49:45]      + display dimensions: 1021 * 554
+[15:49:45]    + encoder: H.264 (x264)
+[15:49:45]      + options: ref=1:weightp=1:subq=2:rc-lookahead=10:trellis=0:8x8dct=0
+[15:49:45]      + quality: 0.00 (RF)
+[15:49:45]  * audio track 1
+[15:49:45]    + decoder: Suomi (AC3) (2.0 ch) (track 1, id 0x80bd)
+[15:49:45]      + bitrate: 256 kbps, samplerate: 48000 Hz
+[15:49:45]    + mixdown: Stereo
+[15:49:45]    + encoder: AAC (faac)
+[15:49:45]      + bitrate: 160 kbps, samplerate: 48000 Hz
+libdvdnav: Using dvdnav version 4.1.3
+libdvdread: Using libdvdcss version 1.2.12 for DVD access
+libdvdread: Couldn't find device name.
+libdvdnav: Can't read name block. Probably not a DVD-ROM device.
+libdvdnav: Unable to find map file '/home/zach/.dvdnav/.map'
+libdvdnav: DVD disk reports itself with Region mask 0x00000000. Regions: 1 2 3 4 5 6 7 8
+libdvdread: Using libdvdcss version 1.2.12 for DVD access
+libdvdread: Couldn't find device name.
+libdvdnav: DVD disk reports itself with Region mask 0x00000000. Regions: 1 2 3 4 5 6 7 8
+[15:49:45] encx264: encoding with stored aspect 64/45
+[15:49:45] encx264: Encoding at constant RF 0.000000
+x264 [info]: using SAR=64/45
+x264 [info]: using cpu capabilities: MMX2 SSE2Fast SSSE3 FastShuffle SSE4.2 AVX
+x264 [info]: profile High 4:4:4 Predictive, level 3.0, 4:2:0 8-bit
+[15:49:45] reader: first SCR 146 id 0xe0 DTS 21657
+[15:49:45] mpeg2: "Chapter  1" (1) at frame 0 time 10800
+[15:49:45] sync: first pts is 10800
+[15:52:58] mpeg2: "Chapter  2" (2) at frame 11052 time 39798000
+[15:53:37] gtkgui: adding subtitle for foreign language audio: fin
+[15:53:38] gtkgui: adding subtitle for foreign language audio: fin
+[15:53:39] gtkgui: adding subtitle for foreign language audio: fin
+[15:59:00] mpeg2: "Chapter  3" (3) at frame 30087 time 108324000
+[16:03:41] mpeg2: "Chapter  4" (4) at frame 44163 time 158997600
+[16:08:02] mpeg2: "Chapter  5" (5) at frame 60204 time 216745200
+[16:12:04] mpeg2: "Chapter  6" (6) at frame 75414 time 271501200
+[16:17:00] mpeg2: "Chapter  7" (7) at frame 93768 time 337575600
+[16:19:31] mpeg2: "Chapter  8" (8) at frame 103422 time 372330000
+libdvdnav: Language 'en' not found, using 'es' instead
+libdvdnav: Menu Languages available: es 
+libdvdnav: Language 'en' not found, using 'es' instead
+libdvdnav: Menu Languages available: es 
+[16:21:29] 4539.279785s: Video -> Film
+libdvdnav: Language 'en' not found, using 'es' instead
+libdvdnav: Menu Languages available: es 
+[16:21:29] reader: done. 1 scr changes
+[16:21:29] work: average encoding speed for job is 59.542393 fps
+[16:21:29] sync: got 113480 frames, 113481 expected
+[16:21:30] mpeg2 done: 113480 frames
+[16:21:30] render: lost time: 0 (0 frames)
+[16:21:30] render: gained time: 0 (0 frames) (0 not accounted for)
+x264 [info]: frame I:797   Avg QP: 0.00  size:202089
+x264 [info]: frame P:112683 Avg QP: 0.00  size:188709
+x264 [info]: mb I  I16..4: 59.2%  0.0% 40.8%
+x264 [info]: mb P  I16..4: 44.3%  0.0%  9.0%  P16..4: 20.6% 11.5% 14.5%  0.0%  0.0%    skip: 0.2%
+x264 [info]: coded y,uvDC,uvAC intra: 90.9% 90.1% 90.1% inter: 99.1% 92.2% 92.2%
+x264 [info]: i16 v,h,dc,p: 85% 12%  3%  0%
+x264 [info]: i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 42% 25%  9%  4%  5%  4%  4%  4%  4%
+x264 [info]: i8c dc,h,v,p: 18% 24% 57%  1%
+x264 [info]: Weighted P-Frames: Y:5.4% UV:0.6%
+x264 [info]: kb/s:37759.97
+[16:21:30] mux: track 0, 113480 frames, 21425352602 bytes, 37759.91 kbps, fifo 1024
+[16:21:30] mux: track 1, 212777 frames, 90801241 bytes, 160.03 kbps, fifo 2048
+[16:21:30] libhb: work result = 0

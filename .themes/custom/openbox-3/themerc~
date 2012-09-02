@@ -1,0 +1,125 @@
+!! http://grvrulz.deviantart.com
+
+!! menu title
+menu.title.bg: raised gradient vertical
+menu.title.bg.color:  #2d2d2d
+menu.title.bg.colorTo: #2d2d2d
+
+
+menu.title.text.color:#dfdbd2
+menu.title.text.justify: left
+
+menu.separator.color:#3c3c3c
+menu.border.color: #454545
+menu.border.width: 0
+
+!! menu items
+menu.items.bg: flat gradient vertical
+menu.items.bg.color:#2d2d2d
+menu.items.bg.colorTo:#2d2d2d
+
+menu.items.text.color:#dfdbd2
+menu.items.justify: left
+menu.items.disabled.text.color: #454545 
+menu.items.active.bg: Gradient Vertical
+menu.items.active.bg.color: #88D6EA
+menu.items.active.bg.colorTo: #62BED5
+menu.items.active.text.color:#ffffff
+
+!! window title
+window.active.title.bg: flat gradient vertical
+window.active.title.bg.color: #3d3c3c
+window.active.title.bg.colorTo: #2d2d2d
+
+
+window.inactive.title.bg: flat gradient vertical
+window.inactive.title.bg.color:  #3d3c3c
+window.inactive.title.bg.colorTo:  #2d2d2d
+
+
+!! window text
+window.label.text.justify: left
+window.active.label.bg: parentrelative
+window.active.label.bg.color: #2f2f2f
+window.active.label.bg.colorTo: #282828
+window.active.label.text.color:#E6E6E6
+window.inactive.label.bg: parentrelative
+window.inactive.label.bg.color: #2f2f2f
+window.inactive.label.bg.colorTo: #282828
+window.inactive.label.text.color: #777777
+
+!! window borders etc
+window.active.client.color: #ffffff
+window.inactive.client.color: #e0e0e0
+
+
+
+window.active.title.separator.color:  #2d2d2d
+window.inactive.title.separator.color: #2d2d2d
+
+!! window buttons
+window.active.button.unpressed.bg: gradient vertical flat
+window.active.button.unpressed.bg.color: #3d3c3c
+window.active.button.unpressed.bg.colorTo: #2d2d2d
+window.active.button.unpressed.image.color: #9b9b9b
+
+window.active.button.pressed.bg: gradient vertical flat
+window.active.button.pressed.bg.color: #3d3c3c
+window.active.button.pressed.bg.colorTo: #2d2d2d
+window.active.button.pressed.image.color: #141414
+
+window.active.button.disabled.bg: gradient vertical flat
+window.active.button.disabled.bg.color: #3d3c3c
+window.active.button.disabled.bg.colorTo: #2d2d2d
+window.active.button.disabled.image.color: #141414
+
+
+window.active.button.hover.bg: gradient vertical flat
+window.active.button.hover.bg.color: #3d3c3c
+window.active.button.hover.bg.colorTo: #2d2d2d
+window.active.button.hover.image.color: #ffffff
+
+window.active.button.toggled.bg: gradient vertical flat
+window.active.button.toggled.bg.color: #3d3c3c
+window.active.button.toggled.bg.colorTo: #2d2d2d
+window.active.button.toggled.image.color: #9b9b9b
+
+window.inactive.button.unpressed.bg: gradient vertical flat
+window.inactive.button.unpressed.bg.color: #3d3c3c
+window.inactive.button.unpressed.bg.colorTo: #2d2d2d
+window.inactive.button.unpressed.image.color: #9b9b9b
+
+window.inactive.button.pressed.bg: gradient vertical flat
+window.inactive.button.pressed.bg.color: #3d3c3c
+window.inactive.button.pressed.bg.colorTo: #2d2d2d
+window.inactive.button.pressed.image.color: #141414
+
+window.inactive.button.disabled.bg: gradient vertical flat
+window.inactive.button.disabled.bg.color: #3d3c3c
+window.inactive.button.disabled.bg.colorTo: #2d2d2d
+window.inactive.button.disabled.image.color: #141414
+
+
+window.inactive.button.hover.bg: gradient vertical flat
+window.inactive.button.hover.bg.color: #3d3c3c
+window.inactive.button.hover.bg.colorTo: #2d2d2d
+window.inactive.button.hover.image.color: #ffffff
+
+window.inactive.button.toggled.bg: gradient vertical flat
+window.inactive.button.toggled.bg.color: #3d3c3c
+window.inactive.button.toggled.bg.colorTo: #2d2d2d
+window.inactive.button.toggled.image.color: #9b9b9b
+
+
+!! misc settings
+border.color: #777777
+border.width: 1
+padding.width: 6
+padding.height: 3
+window.handle.width: 0
+window.client.padding.width: 0
+menu.overlap.x: -3
+menu.overlap.y: -3
+osd.hilight.bg: flat
+osd.hilight.bg.color: #252525
+

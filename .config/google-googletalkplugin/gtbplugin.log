@@ -1,0 +1,27 @@
+[000:307] Browser XEmbed support present: 1
+[000:307] Browser toolkit is Gtk2.
+[000:308] Using Gtk2 toolkit
+[016:319] Starting client channel.
+[016:320] Warning(clientchannel.cc:435): Unreadable or no port file.  Could not initiate GoogleTalkPlugin connection
+[016:322] Warning(clientchannel.cc:410): Could not initiate GoogleTalkPlugin connection
+[016:322] GoogleTalkPlugin not running. Starting new process...
+[016:322] Warning(pluginutils.cc:267): Failed to get GoogleTalkPlugin path. Trying default.
+[016:345] Started GoogleTalkPlugin, path=/opt/google/talkplugin/GoogleTalkPlugin
+[016:346] Waiting for GoogleTalkPlugin to start...
+[017:421] Attempting to connect to GoogleTalkPlugin...
+[017:423] Warning(clientchannel.cc:435): Unreadable or no port file.  Could not initiate GoogleTalkPlugin connection
+[017:424] Warning(clientchannel.cc:410): Could not initiate GoogleTalkPlugin connection
+[017:424] Waiting for GoogleTalkPlugin to start...
+[018:615] Attempting to connect to GoogleTalkPlugin...
+[018:615] Warning(clientchannel.cc:435): Unreadable or no port file.  Could not initiate GoogleTalkPlugin connection
+[018:615] Warning(clientchannel.cc:410): Could not initiate GoogleTalkPlugin connection
+[018:615] Waiting for GoogleTalkPlugin to start...
+[019:675] Attempting to connect to GoogleTalkPlugin...
+[019:675] Read port file, port=43003
+[019:675] Initiated connection to GoogleTalkPlugin
+[019:675] Socket connection established
+[019:675] ScheduleOnlineCheck: Online check in 5000ms
+[019:777] Got cookie response, socket is authorized
+[019:778] AUTHORIZED; socket handshake complete
+[024:732] HandleOnlineCheck: Starting check
+[024:732] HandleOnlineCheck: OK; current state: 3

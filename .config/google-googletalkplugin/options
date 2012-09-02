@@ -1,0 +1,5 @@
+audio-flags=15
+audio-input=
+audio-output=
+known-audio-flags=63
+video-capture=UVC Camera (046d:09a4)

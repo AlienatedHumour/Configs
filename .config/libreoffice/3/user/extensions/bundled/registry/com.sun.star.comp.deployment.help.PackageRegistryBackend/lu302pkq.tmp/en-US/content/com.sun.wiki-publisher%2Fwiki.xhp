@@ -1,0 +1,56 @@
+
+Wiki;Wiki Publisher
+Wiki Publisher
+extensions;MediaWiki
+
+Wiki Publisher
+By using the Wiki Publisher you can upload your current Writer text document to a MediaWiki server. After uploading, all Wiki users can read your document on the Wiki.
+
+Choose File - Send - To MediaWiki to upload the current Writer document to a MediaWiki server.
+System Requirements
+Java Runtime Environment
+
+A Wiki account on a supported MediaWiki server
+
+
+Installing Wiki Publisher
+Before you use the Wiki Publisher, ensure that %PRODUCTNAME uses a Java Runtime Environment (JRE). To check the status of the JRE, choose Tools - Options - %PRODUCTNAME - Java. Ensure that "Use a Java runtime environment" is marked and that a Java runtime folder is selected in the big listbox. If no JRE was activated, then activate a JRE 1.4 or later and restart %PRODUCTNAME.
+To Connect to a Wiki
+Note: You can store your user name and password for all respective dialogs inside %PRODUCTNAME. The password will be stored in a secure way, where access is maintained by a master password. To enable the master password, choose Tools - Options - %PRODUCTNAME - Security.
+Note: If you connect to the web using a proxy server, enter the proxy information to Tools - Options - Internet - Proxy, and restart the software.
+Open a Writer document, and choose Tools - Options - Internet - MediaWiki.
+
+In the Options dialog, click Add.
+
+In the MediaWiki dialog, enter the account information for the Wiki.
+
+
+In the URL textbox, enter the address of a Wiki that you want to connect to.
+You can copy the URL from a web browser and paste it into the textbox.
+
+In the Username box, enter your user ID for your Wiki account.
+If the Wiki allows anonymous write access, you can leave the Username and Password boxes empty.
+
+In the Password box, enter the password for your Wiki account, then click OK.
+
+
+Optionally enable "Save password" to save the password between sessions. A master password is used to maintain access to all saved passwords. Choose Tools - Options - %PRODUCTNAME - Security to enable the master password. "Save password" is unavailable when the master password is not enabled.
+To Create a New Wiki Page
+Open a Writer document.
+
+Write the content of the Wiki page. You can use formatting like text formats, headings, footnotes, and more. See the list of supported formats.
+
+Choose File - Send - To MediaWiki.
+
+In the Send to MediaWiki dialog, specify the settings for your entry.
+
+
+MediaWiki server: Select the Wiki.
+Title: Type the title of your page. Type the title of an existing page to overwrite the page with your current text document. Type a new title to create a new page on the Wiki.
+Summary: Enter an optional short summary of your page.
+This is a minor edit: Check this box to mark the uploaded page as a minor edit of the already existing page with the same title.
+Show in web browser: Check this box to open your system web browser and show the uploaded Wiki page.
+Click Send.
+
+
+

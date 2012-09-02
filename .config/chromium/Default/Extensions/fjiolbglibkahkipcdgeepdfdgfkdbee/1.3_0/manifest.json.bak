@@ -1,0 +1,29 @@
+{
+    "name": "Google Music Applet",
+    "version": "1.3",
+    "description": "Lightweight music playback controls and now playing information for Google Play created by Kyle Kamperschroer",
+    "homepage_url" : "https://chrome.google.com/webstore/detail/fjiolbglibkahkipcdgeepdfdgfkdbee?hl=en-US",
+
+    "browser_action": {
+        "default_icon": "images/icon48.png",
+        "popup": "html/background.html",
+        "default_title": "Google Play Music Applet"
+    },
+    
+    "content_scripts": [
+        {
+            "matches" : ["*://play.google.com/music/*"],
+            "js" : ["js/jquery.js"],
+            "run_at" : "document_start"
+        },
+        {
+            "matches" : ["*://play.google.com/music/*"],
+            "js" : ["js/contentscript.js"]
+        }
+    ],
+        
+    "permissions": [
+        "tabs",
+        "*://play.google.com/music*"
+    ]
+}

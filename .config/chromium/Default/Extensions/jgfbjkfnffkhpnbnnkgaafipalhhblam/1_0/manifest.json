@@ -1,0 +1,17 @@
+{
+   "app": {
+      "launch": {
+         "web_url": "http://streamie.org/"
+      },
+      "urls": [ "*://streamie.org/" ]
+   },
+   "description": "Streamie is a realtime Twitter client that runs right in your browser.",
+   "icons": {
+      "128": "streamie-anim-128.gif"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC/hr01vWxeWeQitUbhxh16m9IYR8chsDHeYp9a7h2tZd87FlCa6InlKON8f2YZZeJBznvHb3b4DxP/gE4SJ8+PVG+4MAVym9FHm6p1UwNGVWVfBegt4KrdOYqQszMKv1URG2Db+Po0Bfhclq2n2C09tLyQebtAC6khkQCNKfglaQIDAQAB",
+   "name": "Streamie",
+   "permissions": [ "unlimitedStorage", "notifications" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "1"
+}

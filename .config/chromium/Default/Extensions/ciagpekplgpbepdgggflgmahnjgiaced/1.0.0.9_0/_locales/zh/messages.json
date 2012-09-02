@@ -1,0 +1,11 @@
+{
+   "uwl_ext_chrome_browseraction": {
+      "message": "\u52A0\u5165\u4E9A\u9A6C\u900A\u5FC3\u613F\u5355"
+   },
+   "uwl_ext_chrome_description": {
+      "message": "\u5C06\u4EFB\u610F\u7F51\u7AD9\u7684\u5546\u54C1\u6DFB\u52A0\u5230\u4F60\u7684\u4E9A\u9A6C\u900A\u5FC3\u613F\u5355"
+   },
+   "uwl_ext_chrome_name": {
+      "message": "\u52A0\u5165\u4E9A\u9A6C\u900A\u5FC3\u613F\u5355"
+   }
+}

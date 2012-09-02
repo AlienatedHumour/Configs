@@ -1,0 +1,48 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+#PS1='[\u@\h \W]\$ '
+PS1='+------------[\W]\n+------> '
+
+
+####ENVIRONMENT VARIABLES####
+export DE=xfce
+export EDITOR=leafpad
+
+####PACMAN####
+alias pacman='sudo pacman'
+alias pinstall='packer -S'
+alias sysupdate='packer -Syu'
+alias psearch='packer -Ss'
+alias puninstall='sudo pacman -Rnds'
+alias pclean='sudo pacman -Scc'
+
+
+####POWER####
+alias reboot='sudo reboot'
+alias poweroff='sudo poweroff'
+alias sleep='sudo pm-suspend'
+
+####SYSTEM CONFIGURATION####
+alias rc='sudo $EDITOR /etc/rc.conf'
+alias rcbash='$EDITOR ~/.bashrc'
+alias rc.d='sudo rc.d'
+alias edit='$EDITOR'
+alias keycheck="xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'"
+
+####NAVIGATION/MANAGEMENT####
+alias mkdir='mkdir -p'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias cp='cp -r'
+alias rm='rm -rf'
+alias cronedit='EDITOR=nano crontab -e'
+
+####SSH####
+alias sshs='ssh zach@192.168.1.118 -p 2222'
+

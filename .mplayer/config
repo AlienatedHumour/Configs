@@ -1,0 +1,18 @@
+# Write your default config options here!
+ao="alsa"
+srate=48000
+#monitoraspect="16:9"
+font=/usr/share/fonts/TTF/Comfortaa-Light.ttf
+spualign="-1"
+spuaa="4"
+slang=en,eng
+sub-fuzziness="1"
+ffactor="10"
+sub-bg-alpha="0"
+sub-bg-color="0"
+subpos="90"
+ontop="1"
+stop-xscreensaver="yes"
+vo="xv"
+double="yes"
+cache-min="1"

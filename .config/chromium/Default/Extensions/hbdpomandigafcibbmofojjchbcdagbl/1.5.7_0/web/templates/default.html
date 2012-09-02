@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>TweetDeck</title>
+    <meta name="application-name" content="TweetDeck">
+    <meta name="description" content="TweetDeck is your personal browser for staying in touch with what’s happening now, connecting you with your contacts across Twitter and Facebook.">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, height=700, initial-scale=1, user-scalable=yes">
+    <link rel="stylesheet" href="/web/css/app.css">
+    <link rel="shortcut icon" href="https://web.tweetdeck.com/favicon.ico">
+    <link rel="apple-touch-icon" href="/web/assets/logos/ios-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/web/assets/logos/ios-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/web/assets/logos/ios-icon-iphone4.png">
+</head>
+<body>
+
+    <audio style="display:none" preload="auto" id="update-sound" autobuffer>
+        <source src="/web/assets/sounds/tweet.mp3" type="audio/mp3">
+        <source src="/web/assets/sounds/tweet.ogg" type="audio/ogg">
+    </audio>
+
+    <div id="action-messages" class="alrt"></div>
+
+    <div id="container" class="scr-h">
+        <div id="columns"></div>
+    </div>
+
+    <div id="compose-modal" class="ovl scr-v"></div>
+    <div id="open-modal" class="ovl scr-v"></div>
+    <div id="actions-modal" class="ovl scr-v"></div>
+    <div id="lists-modal" class="ovl scr-v"></div>
+    <div id="splash-modal" class="ovl scr-v"></div>
+
+    <!-- Global settings -->
+    <div id="settings-modal" class="ovl scr-v"></div>
+
+    <div id="startflow-modal" class="ovl s-login">
+        <div class="js-start-container srt-modal"></div>
+    </div>
+
+    <script src="/web/mustaches/mustaches.js"></script>
+    <script type="text/javascript" src="/web/scripts/default.js"></script>
+
+    <script type="text/javascript">
+        // INITIALISE THE APP!
+        $(document).ready(TD.controller.init.start);
+    </script>
+
+    <script type="text/javascript">
+        /* Google Analytics Asynchronous Tracking */
+        /* For more information see here: */
+        /* http://code.google.com/apis/analytics/docs/tracking/asyncTracking.html */
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4790629-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script');
+          ga.type = 'text/javascript';
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          ga.setAttribute('async', 'true');
+          //document.documentElement.firstChild.appendChild(ga);
+          var i = document.getElementsByTagName('script')[0]; i.parentNode.insertBefore(ga, i);
+        })();
+    </script>
+
+    <!-- The image we use for tracking pings-->
+    <img id="tracking_image" width="0" height="0">
+
+</body>
+</html>

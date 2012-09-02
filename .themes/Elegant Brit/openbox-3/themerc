@@ -1,0 +1,175 @@
+!! Elegant Brit openbox theme by EntereX
+
+
+
+!!------------------------------------------------------------------------
+
+!! MENU SETTINGS
+
+!!------------------------------------------------------------------------
+
+!! menu title
+
+menu.title.bg:                                  flat solod
+menu.title.bg.color:                            #262729
+
+menu.title.text.color:                          #FAFAFA
+menu.title.text.justify:                        center
+
+menu.separator.color:                           #6C9EAB
+menu.border.color:                              #FAFAFA
+menu.border.width:                              1
+
+!!------------------------------------------------------------------------
+
+!! menu items
+
+menu.items.bg:                                  flat solid
+menu.items.bg.color:                            #FAFAFA
+menu.items.text.color:                          #6C9EAB
+
+menu.items.justify:                             left
+menu.items.disabled.text.color:                 #BDBDBD
+ 
+menu.items.active.bg:                           flat solid
+menu.items.active.bg.color:                     #FAFAFA
+menu.items.active.text.color:                   #356AA0
+
+
+!!------------------------------------------------------------------------
+
+!! WINDOW SETTINGS
+
+!!------------------------------------------------------------------------
+
+!! window title
+
+window.active.title.bg:                         flat solid
+window.active.title.bg.color:                   #262729
+
+
+window.inactive.title.bg:                       flat solid
+window.inactive.title.bg.color:                 #262729
+
+!!------------------------------------------------------------------------
+
+!! window text
+
+window.label.text.justify:                      right
+window.active.label.bg:                         parentrelative
+window.active.label.bg.color:                   #262729
+window.active.label.bg.colorTo:                 #262729
+window.active.label.text.color:                 #FAFAFA
+
+window.inactive.label.bg:                       parentrelative
+window.inactive.label.bg.color:                 #262729
+window.inactive.label.bg.colorTo:               #262729
+window.inactive.label.text.color:               #6F6F6F
+
+!!------------------------------------------------------------------------
+
+!! window borders
+
+window.active.client.color:                     #262729
+window.inactive.client.color:                   #262729
+
+window.active.title.separator.color:            #262729
+window.inactive.title.separator.color:          #262729
+
+!!------------------------------------------------------------------------
+
+!! WINDOW BUTTONS
+
+!!------------------------------------------------------------------------
+
+!! ACTIVE
+
+window.active.button.unpressed.bg:              gradient vertical flat
+window.active.button.unpressed.bg.color:        #262729
+window.active.button.unpressed.bg.colorTo:      #262729
+window.active.button.unpressed.image.color:     #6C9EAB
+
+window.active.button.pressed.bg:                gradient vertical flat
+window.active.button.pressed.bg.color:          #262729
+window.active.button.pressed.bg.colorTo:        #262729
+window.active.button.pressed.image.color:       #FAFAFA
+
+window.active.button.disabled.bg:               gradient vertical flat
+window.active.button.disabled.bg.color:         #262729
+window.active.button.disabled.bg.colorTo:       #262729
+window.active.button.disabled.image.color:      #6C9EAB
+
+
+window.active.button.hover.bg: gradient         vertical flat
+window.active.button.hover.bg.color:            #262729
+window.active.button.hover.bg.colorTo:          #262729
+window.active.button.hover.image.color:         #FAFAFA
+
+window.active.button.toggled.bg:                gradient vertical flat
+window.active.button.toggled.bg.color:          #262729
+window.active.button.toggled.bg.colorTo:        #262729
+window.active.button.toggled.image.color:       #FAFAFA
+
+!!------------------------------------------------------------------------
+
+!! INACTIVE
+
+window.inactive.button.unpressed.bg:            gradient vertical flat
+window.inactive.button.unpressed.bg.color:      #262729
+window.inactive.button.unpressed.bg.colorTo:    #262729
+window.inactive.button.unpressed.image.color:   #262729
+
+window.inactive.button.pressed.bg:              gradient vertical flat
+window.inactive.button.pressed.bg.color:        #262729
+window.inactive.button.pressed.bg.colorTo:      #262729
+window.inactive.button.pressed.image.color:     #FAFAFA
+
+window.inactive.button.disabled.bg:             gradient vertical flat
+window.inactive.button.disabled.bg.color:       #262729
+window.inactive.button.disabled.bg.colorTo:     #262729
+window.inactive.button.disabled.image.color:    #6C9EAB
+
+
+window.inactive.button.hover.bg:                gradient vertical flat
+window.inactive.button.hover.bg.color:          #262729
+window.inactive.button.hover.bg.colorTo:        #262729
+window.inactive.button.hover.image.color:       #6C9EAB
+
+window.inactive.button.toggled.bg:              gradient vertical flat
+window.inactive.button.toggled.bg.color:        #262729
+window.inactive.button.toggled.bg.colorTo:      #262729
+window.inactive.button.toggled.image.color:     #6C9EAB
+
+!!------------------------------------------------------------------------
+
+!! OSD SETTINGS
+
+osd.hilight.bg:                                 flat
+osd.hilight.bg.color:                           #356AA0
+
+osd.unhilight.bg:				flat
+osd.unhilight.bg.color:				#6C9EAB
+
+osd.border.width:                               1
+osd.border.color:                               #FAFAFA
+
+osd.label.text.color				#FAFAFA
+
+!!------------------------------------------------------------------------
+
+!! OTHER SETTINGS
+
+border.color:                                   #6C9EAB
+border.width:                                   1
+
+padding.width:                                  0
+padding.height:                                 0
+
+window.handle.width:                            0
+window.client.padding.width:                    0
+
+menu.overlap.x:                                 -5
+menu.overlap.y:                                 0
+
+
+

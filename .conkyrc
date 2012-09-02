@@ -1,0 +1,47 @@
+#avoid flicker
+double_buffer yes
+
+#own window to run simultanious 2 or more conkys
+own_window  yes
+own_window_transparent yes
+own_window_type desktop
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager 
+
+#borders
+draw_borders no
+border_inner_margin 3
+
+#shades
+draw_shades no
+#position
+gap_x 5
+gap_y 4
+alignment top_left
+
+#behaviour
+update_interval 1
+
+#colour
+default_color  808080
+#color1  	e04613 #orange
+color1		6c9eab #blue
+#default_shade_color 000000
+#own_window_colour 333333
+
+#font
+use_xft yes
+xftfont Comfortaa:size=11
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale yes
+
+#to prevent window from moving
+use_spacer none
+minimum_size 0 0
+maximum_width 1500
+
+mpd_host capital
+mpd_port 6600
+
+TEXT
+Date: ${color1}${time %m/%d/%Y}${color}  Time: ${color1}${time %I:%M %p}${color} Weather: ${color1}${execi 600 /home/zach/scripts/weather}°F${color} | ${color1}${mpd_title}${color} at ${color1}${mpd_elapsed}/${mpd_length}${color} from ${color1}${mpd_album}${color} by ${color1}${mpd_artist}${color}

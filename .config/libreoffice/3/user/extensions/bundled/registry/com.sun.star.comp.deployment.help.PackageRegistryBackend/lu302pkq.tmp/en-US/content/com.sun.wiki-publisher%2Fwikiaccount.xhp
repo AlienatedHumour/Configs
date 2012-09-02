@@ -1,0 +1,15 @@
+
+MediaWiki
+Use the MediaWiki dialog to add or edit your MediaWiki account settings.
+
+Enter the URL of a MediaWiki server, starting with http://
+
+Enter your user name on the MediaWiki server. Leave empty for anonymous access.
+
+Enter your password on the MediaWiki server. Leave empty for anonymous access.
+
+Enable to store your password between sessions. The master password must be enabled, see Tools - Options - %PRODUCTNAME - Security.
+Enter the Internet address of a Wiki server in a format like http://wiki.documentfoundation.org or copy the URL from a web browser.
+If the Wiki allows anonymous access, you can leave the account text boxes empty. Else enter your user name and password.
+If you have enabled the master password feature on the Security tab page of the Tools - Options - %PRODUCTNAME dialog, then the software can store your password and automatically insert the data where necessary. Enable the "Save password" checkbox to store your password.
+

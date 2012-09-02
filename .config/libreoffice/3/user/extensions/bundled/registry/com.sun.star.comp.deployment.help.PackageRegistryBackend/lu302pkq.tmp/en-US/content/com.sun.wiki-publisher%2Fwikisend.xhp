@@ -1,0 +1,17 @@
+
+Send to MediaWiki
+In the Send to MediaWiki dialog, specify the settings for your current Wiki upload.
+
+Select the MediaWiki server where you want to publish your document. Click Add to add a new server to the list.
+
+Enter the title of your Wiki entry. This is the top heading of your Wiki entry. For a new entry, the title must be unique on this Wiki. If you enter an existing title, your upload will overwrite the existing Wiki entry.
+
+Enter an optional short summary or comment. See http://meta.wikimedia.org/wiki/Help:Edit_summary.
+
+This is a minor edit: Check this box to mark the uploaded page as a minor edit of the already existing page with the same title.
+
+Show in web browser: Check this box to open your system web browser and show the uploaded Wiki page.
+
+
+
+

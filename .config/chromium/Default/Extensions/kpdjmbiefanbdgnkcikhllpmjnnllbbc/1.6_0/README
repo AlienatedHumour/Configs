@@ -1,0 +1,18 @@
+Save as PDF
+===========
+
+Save as PDF is a Google Chrome extension that lets you easily save web pages to
+pdf. It uses <http://pdfcrowd.com> online html to pdf service.
+
+
+Install the extension:
+ <https://chrome.google.com/extensions/detail/kpdjmbiefanbdgnkcikhllpmjnnllbbc>
+
+Pdfcrowd:
+ <http://pdfcrowd.com>
+
+Project homepage at GitHub:
+ <http://github.com/jgresula/save-as-pdf-chrome>
+
+Enter an issue:
+ <http://github.com/jgresula/save-as-pdf-chrome/issues>

@@ -1,0 +1,24 @@
+{
+   "author": "moon.aka.sun",
+   "content_scripts": [ {
+      "js": [ "imagezoom.js" ],
+      "matches": [ "http://*/*", "https://*/*" ]
+   } ],
+   "date": "2010.07.30",
+   "date_updated": "2010.08.03",
+   "description": "Zoom images inline on the current page by holding the middle mouse button down and moving mouse left-right.",
+   "icons": {
+      "16": "zoom_in_16.png",
+      "24": "zoom_in_24.png",
+      "32": "zoom_in_32.png",
+      "48": "zoom_in_48.png",
+      "64": "zoom_in_64.png",
+      "C8": "zoom_in_C8.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCuYdYwjBYRh2wqoul807KgjxqwtUyOqgrINrg/ZtXedd8qTrhG6feqk1bocYQG5myN+h6r/xYmjTfyqNZvYNlef4IrLMFgiWORUuxAgX/pHtYpHABVEPjidlEnbLf1k4vgJuc++PQI47WHF8Q01qpbzRzEKh+Sre9GDEowHZkVIwIDAQAB",
+   "name": "ImageZoom",
+   "permissions": [ "tabs", "http://*/*", "https://*/*" ],
+   "real_name": "Georgiy Pruss",
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "1.5"
+}

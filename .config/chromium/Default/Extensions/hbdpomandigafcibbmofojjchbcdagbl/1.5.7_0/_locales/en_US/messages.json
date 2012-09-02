@@ -1,0 +1,554 @@
+{
+   "1FBPage": {
+      "message": "{{1}} (FB Page)"
+   },
+   "1Profile": {
+      "message": "{{1}} Profile"
+   },
+   "1days": {
+      "message": "{{1}} days"
+   },
+   "1hour": {
+      "message": "1 hour"
+   },
+   "1hours": {
+      "message": "{{1}} hours"
+   },
+   "1min": {
+      "message": "1 min"
+   },
+   "1mins": {
+      "message": "{{1}} mins"
+   },
+   "1more2": {
+      "message": "{{1}} more {{2}}"
+   },
+   "1sLists": {
+      "message": "{{1}}'s Lists"
+   },
+   "1week": {
+      "message": "1 week"
+   },
+   "1weeks": {
+      "message": "{{1}} weeks"
+   },
+   "AM": {
+      "message": "AM"
+   },
+   "Accountsynccomplete": {
+      "message": "Account sync complete"
+   },
+   "Add1": {
+      "message": "Add {{1}}"
+   },
+   "AddColumn": {
+      "message": "Add Column"
+   },
+   "AddMedia": {
+      "message": "Add Media"
+   },
+   "AddNewAccount": {
+      "message": "Add New Account"
+   },
+   "Addallofyourcolumnsandaccounts": {
+      "message": "Add all of your columns and accounts"
+   },
+   "Addasnewcolumn": {
+      "message": "Add as new column"
+   },
+   "AddyouraccountstoTweetDeck": {
+      "message": "Add your accounts to TweetDeck"
+   },
+   "Addyourlocation": {
+      "message": "Add your location"
+   },
+   "AllFriends": {
+      "message": "All Friends"
+   },
+   "Areyousureyouwanttodeletethisscheduledupdate": {
+      "message": "Are you sure you want to delete this scheduled update?"
+   },
+   "AreyousureyouwanttoleaveTweetDeck": {
+      "message": "Are you sure you want to leave TweetDeck?"
+   },
+   "Areyousureyouwanttoremoveaccount1fromTweetDeck": {
+      "message": "Are you sure you want to remove account '{{1}}' from TweetDeck?"
+   },
+   "Areyousureyouwanttosend": {
+      "message": "Are you sure you want to send?"
+   },
+   "Back": {
+      "message": "Back"
+   },
+   "Backto1": {
+      "message": "Back to {{1}}"
+   },
+   "Block1": {
+      "message": "Block {{1}}"
+   },
+   "Cancel": {
+      "message": "Cancel"
+   },
+   "Cancelediting": {
+      "message": "Cancel editing?"
+   },
+   "Capture": {
+      "message": "Capture"
+   },
+   "Checkinto1": {
+      "message": "Check-in to {{1}}"
+   },
+   "Clickheretoopenthesidebar": {
+      "message": "Click here to open the sidebar"
+   },
+   "Clicktoedit": {
+      "message": "Click to edit"
+   },
+   "Comment": {
+      "message": "Comment"
+   },
+   "Commenting": {
+      "message": "Commenting"
+   },
+   "Compose": {
+      "message": "Compose"
+   },
+   "ConfirmPassword": {
+      "message": "Confirm Password"
+   },
+   "Continue": {
+      "message": "Continue"
+   },
+   "Createlink": {
+      "message": "Create link"
+   },
+   "Delete": {
+      "message": "Delete"
+   },
+   "Deleting": {
+      "message": "Deleting"
+   },
+   "Deletingscheduledupdate": {
+      "message": "Deleting scheduled update!"
+   },
+   "DirectMessages": {
+      "message": "Direct Messages"
+   },
+   "Directmessageto1": {
+      "message": "Direct message to {{1}}"
+   },
+   "Done": {
+      "message": "Done"
+   },
+   "Dragcolumnheadertoreorder": {
+      "message": "Drag column header to reorder"
+   },
+   "EPICFAIL": {
+      "message": "EPICFAIL!"
+   },
+   "Email": {
+      "message": "Email"
+   },
+   "Emailstatus": {
+      "message": "Email status"
+   },
+   "Failed1": {
+      "message": "Failed: {{1}}"
+   },
+   "Favorite": {
+      "message": "Favorite"
+   },
+   "Favorites": {
+      "message": "Favorites"
+   },
+   "Favoriting": {
+      "message": "Favoriting"
+   },
+   "Follow": {
+      "message": "Follow"
+   },
+   "Followers": {
+      "message": "Followers"
+   },
+   "Following": {
+      "message": "Following"
+   },
+   "Followingeachother": {
+      "message": "Following each other"
+   },
+   "Followingyou": {
+      "message": "Following you"
+   },
+   "FriendsCheckins": {
+      "message": "Friends' Checkins"
+   },
+   "Getstartedwithoutsigningin": {
+      "message": "Get started without signing in"
+   },
+   "GuestMode": {
+      "message": "Guest Mode"
+   },
+   "Home": {
+      "message": "Home"
+   },
+   "IfyoucancelyoureditingnowyouwillloseanychangesmadeAreyousureyouwanttocancel": {
+      "message": "If you cancel your editing now you will lose any changes made. Are you sure you want to cancel?"
+   },
+   "ImportfromTweetDeckdesktop": {
+      "message": "Import from TweetDeck desktop"
+   },
+   "Inbox": {
+      "message": "Inbox"
+   },
+   "Itsyou": {
+      "message": "It's you"
+   },
+   "Justnow": {
+      "message": "Just now"
+   },
+   "Like": {
+      "message": "Like"
+   },
+   "Liking": {
+      "message": "Liking"
+   },
+   "Lists1follows": {
+      "message": "Lists {{1}} follows"
+   },
+   "LookingforGoogleBuzzWeresorrybutsupportforGoogleBuzzhasbeendiscontinued": {
+      "message": "Looking for Google Buzz? We're sorry but support for Google Buzz has been discontinued."
+   },
+   "MEGAFAIL": {
+      "message": "MEGAFAIL!"
+   },
+   "Me": {
+      "message": "Me"
+   },
+   "Mention": {
+      "message": "Mention"
+   },
+   "Mention1": {
+      "message": "Mention {{1}}"
+   },
+   "Mentions": {
+      "message": "Mentions"
+   },
+   "MergedColumns": {
+      "message": "Merged Columns"
+   },
+   "Message": {
+      "message": "Message"
+   },
+   "Message1": {
+      "message": "Message {{1}}"
+   },
+   "Messagehasnorecipient": {
+      "message": "Message has no recipient!"
+   },
+   "More": {
+      "message": "More"
+   },
+   "Morethanamonth": {
+      "message": "More than a month"
+   },
+   "Muting": {
+      "message": "Muting"
+   },
+   "NewsFeed": {
+      "message": "News Feed"
+   },
+   "No": {
+      "message": "No"
+   },
+   "NoResults": {
+      "message": "No Results"
+   },
+   "Notifications": {
+      "message": "Notifications"
+   },
+   "Oopsyoudonthaveanyaccountsselected": {
+      "message": "Oops - you don't have any accounts selected!"
+   },
+   "Oopsyouhaventaddedanycontenttothepost": {
+      "message": "Oops - you haven't added any content to the post"
+   },
+   "OriginalTweet1": {
+      "message": "Original Tweet: {{1}}"
+   },
+   "Orregisterforafreeaccount": {
+      "message": "Or register for a free account"
+   },
+   "PM": {
+      "message": "PM"
+   },
+   "Password": {
+      "message": "Password"
+   },
+   "Passwordsdonotmatch": {
+      "message": "Passwords do not match!"
+   },
+   "Pleasecompleteusernamepassword": {
+      "message": "Please complete username & password"
+   },
+   "PleaseselectaTwitteraccounttouploadmedia": {
+      "message": "Please select a Twitter account to upload media"
+   },
+   "Pleaseuseavalidemailaddress": {
+      "message": "Please use a valid email address"
+   },
+   "Popup": {
+      "message": "Popup"
+   },
+   "Postingfrom": {
+      "message": "Posting from"
+   },
+   "PrivacyPolicy": {
+      "message": "Privacy Policy"
+   },
+   "Readless": {
+      "message": "Read less"
+   },
+   "Readmore": {
+      "message": "Read more"
+   },
+   "Register": {
+      "message": "Register"
+   },
+   "RegisterforTweetDeck": {
+      "message": "Register for TweetDeck"
+   },
+   "RegisteringunsuccessfulPleasecheckyouremailpassword": {
+      "message": "Registering unsuccessful. Please check your email & password"
+   },
+   "Remove": {
+      "message": "Remove"
+   },
+   "Removecolumn": {
+      "message": "Remove column"
+   },
+   "Removingaccount": {
+      "message": "Removing account!"
+   },
+   "Reply": {
+      "message": "Reply"
+   },
+   "Replying": {
+      "message": "Replying"
+   },
+   "Report1forspam": {
+      "message": "Report {{1}} for spam"
+   },
+   "Reporting": {
+      "message": "Reporting"
+   },
+   "Reset": {
+      "message": "Reset"
+   },
+   "ResetAll": {
+      "message": "Reset All"
+   },
+   "Retweet": {
+      "message": "Retweet"
+   },
+   "Retweeting1from": {
+      "message": "Retweeting {{1}} from:"
+   },
+   "Schedule": {
+      "message": "Schedule"
+   },
+   "Scheduled": {
+      "message": "Scheduled"
+   },
+   "Schedulingupdate": {
+      "message": "Scheduling update"
+   },
+   "Search": {
+      "message": "Search"
+   },
+   "SearchTwitterfor1": {
+      "message": "Search Twitter for {{1}}"
+   },
+   "SearchTwitterusersfor1": {
+      "message": "Search Twitter users for {{1}}"
+   },
+   "Searching": {
+      "message": "Searching"
+   },
+   "Send": {
+      "message": "Send"
+   },
+   "Sending": {
+      "message": "Sending..."
+   },
+   "Sendingfailed": {
+      "message": "Sending failed"
+   },
+   "Sendingupdateto1": {
+      "message": "Sending update to {{1}}"
+   },
+   "Sendmessagefrom": {
+      "message": "Send message from"
+   },
+   "SentviaTweetDeckwwwtweetdeckcom": {
+      "message": "Sent via TweetDeck (www.tweetdeck.com)"
+   },
+   "SetTime": {
+      "message": "Set Time"
+   },
+   "Settingsfor1": {
+      "message": "Settings for {{1}}"
+   },
+   "Share": {
+      "message": "Share"
+   },
+   "SharelinkwithTweetDeck": {
+      "message": "Share link with TweetDeck"
+   },
+   "SharepagewithTweetDeck": {
+      "message": "Share page with TweetDeck"
+   },
+   "ShowTwitterprofilefors": {
+      "message": "Show Twitter profile for %s"
+   },
+   "SignOut": {
+      "message": "Sign Out"
+   },
+   "Signin": {
+      "message": "Sign in"
+   },
+   "Signingin": {
+      "message": "Signing in..."
+   },
+   "SignintoTweetDeck": {
+      "message": "Sign in to TweetDeck"
+   },
+   "SigninunsuccessfulPleasecheckyourpassword": {
+      "message": "Sign in unsuccessful. Please check your password"
+   },
+   "SigninwithyourTweetDeckaccount": {
+      "message": "Sign in with your TweetDeck account"
+   },
+   "Sound": {
+      "message": "Sound"
+   },
+   "Staysignedin": {
+      "message": "Stay signed in"
+   },
+   "SwitchtoTweetDeckDesktoptoauthorize": {
+      "message": "Switch to TweetDeck Desktop to authorize"
+   },
+   "Syncingaccounts": {
+      "message": "Syncing accounts..."
+   },
+   "TermsofService": {
+      "message": "Terms of Service"
+   },
+   "Thisscheduledupdateisassociatedwith1accountswhicharenotauthorisedinthisTweetDeckTheseaccountswillthereforenotbeavailableduringthiseditunlessyoureaddthemfromtheaccountspanel": {
+      "message": "This scheduled update is associated with {{1}} accounts which are not authorised in this TweetDeck. These accounts will therefore not be available during this edit unless you re-add them from the accounts panel"
+   },
+   "ThisscheduledupdateisassociatedwithanaccountwhichisnotauthorisedinthisTweetDeckThisaccountwillthereforenotbeavailableduringthiseditunlessyoureadditfromtheaccountspanel": {
+      "message": "This scheduled update is associated with an account which is not authorised in this TweetDeck. This account will therefore not be available during this edit unless you re-add it from the accounts panel"
+   },
+   "Thisupdatefromprotectedaccount1willbepubliclyvisibleonthedecklywebsiteWouldyouliketosendanyway": {
+      "message": "This update from protected account @{{1}} will be publicly visible on the deck.ly website. Would you like to send anyway?"
+   },
+   "Torememberyouraccountsenablemorefeatures": {
+      "message": "To remember your accounts & enable more features"
+   },
+   "Translate": {
+      "message": "Translate"
+   },
+   "Trends": {
+      "message": "Trends"
+   },
+   "Tweetforwardedby1": {
+      "message": "Tweet forwarded by @{{1}}"
+   },
+   "Tweets": {
+      "message": "Tweets"
+   },
+   "TwitterUsers": {
+      "message": "Twitter Users"
+   },
+   "Twitterusers": {
+      "message": "Twitter users"
+   },
+   "Typeausername": {
+      "message": "Type a username..."
+   },
+   "UndoRetweet": {
+      "message": "Undo Retweet"
+   },
+   "UndoingRetweet": {
+      "message": "Undoing Retweet"
+   },
+   "Unfavoriting": {
+      "message": "Unfavoriting"
+   },
+   "Unfollow": {
+      "message": "Unfollow"
+   },
+   "Unliking": {
+      "message": "Un-liking"
+   },
+   "Untranslate": {
+      "message": "Untranslate"
+   },
+   "Uploading1": {
+      "message": "Uploading {{1}}"
+   },
+   "Wallpostto1": {
+      "message": "Wallpost to {{1}}"
+   },
+   "WalltoWall": {
+      "message": "Wall to Wall"
+   },
+   "Warning": {
+      "message": "Warning!"
+   },
+   "WhyisthistopictrendingClicktotellus": {
+      "message": "Why is this topic trending? Click to tell us"
+   },
+   "Working1": {
+      "message": "Working: {{1}}"
+   },
+   "Yes": {
+      "message": "Yes"
+   },
+   "Yesterday": {
+      "message": "Yesterday"
+   },
+   "Youfollow": {
+      "message": "You follow"
+   },
+   "Youreawesome": {
+      "message": "You're awesome"
+   },
+   "Yourpasswordshouldbelongerthan7characters": {
+      "message": "Your password should be longer than 7 characters"
+   },
+   "Yourpersonalbrowserforstayingintouchwithwhatshappeningnow": {
+      "message": "Your personal browser for staying in touch with what's happening now"
+   },
+   "by1": {
+      "message": "by {{1}}"
+   },
+   "list": {
+      "message": "list"
+   },
+   "lists": {
+      "message": "lists"
+   },
+   "page": {
+      "message": "page"
+   },
+   "pages": {
+      "message": "pages"
+   },
+   "search": {
+      "message": "search"
+   },
+   "searches": {
+      "message": "searches"
+   }
+}

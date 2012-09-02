@@ -1,0 +1,13 @@
+
+MediaWiki Options
+You can add, edit and remove MediaWiki servers. Open the dialog by Tools - Options - Internet - MediaWiki. Alternatively, choose Tools - Extension Manager, select the Wiki Publisher, and click the Options button.
+
+Click Add to add a new Wiki server.Select an entry and click Edit to edit the account settings.Select an entry and click Remove to remove the entry from the list.
+
+Opens the MediaWiki dialog to add a new entry to the list.
+
+Opens the MediaWiki dialog to edit the selected entry.
+
+Removes the selected entry from the list.
+When you click Add or Edit, the MediaWiki dialog opens.
+

@@ -1,0 +1,43 @@
+#
+# These things are run when an Openbox X Session is started.
+# You may place a similar script in $HOME/.config/openbox/autostart
+# to run user-specific things.
+#
+
+# If you want to use GNOME config tools...
+#
+#if test -x /usr/lib/openbox/gnome-settings-daemon >/dev/null; then
+#  /usr/lib/openbox/gnome-settings-daemon &
+#elif which gnome-settings-daemon >/dev/null 2>&1; then
+#  gnome-settings-daemon &
+#fi
+
+# If you want to use XFCE config tools...
+#
+#xfce-mcs-manager &
+sudo powerdown &
+launchy &
+trayer --edge top --align right --expand true --widthtype request --transparent true --alpha 255 --height 20 & #Sets up a tray for icons in upper right of desktop which is transparent and grows out to the left
+sudo /usr/bin/suspender 7 &
+thunar --daemon & #Allows Thunar to start up quickly
+xautolock -time 5 -locker slimlock & #Locks computer after 5 minutes idle time with SLiMLock
+/home/zach/scripts/suspender 5 & #Puts laptop to sleep at 5% battery life
+xrdb merge /home/zach/.xresources & #Sets variables for terminal emulators 
+feh --bg-scale /home/zach/.wallpapers/free-as-in-beauty-gnu-comfortaa.png & #Background is generic
+#feh --bg-scale /home/zach/.wallpapers/free-as-in-beauty-arch-comfortaa.png & #Background is arch
+xcompmgr & #Compositing for windows
+sudo chown zach:users /sys/devices/platform/samsung/leds/samsung\:\:kbd_backlight/brightness & #Allows keyboard backlight to be changed
+conky & #System and other info
+numlockx & #Sets numlock to turn on
+(sleep 2 && nm-applet ) & #Internet Connection settings
+#( sleep 2 && wicd-client --tray ) & #Internet Connection settings
+( sleep 4 && volwheel ) & #Tray icon for controlling volume
+( sleep 6 && cbatticon ) & #Tray icon for battery information
+( sleep 8 && weatherboy -u f -l 12758714 ) &  #Boston Weather
+#( sleep 8 && weatherboy -u f -l 12761173 ) &  #New Jersey Weather
+#( sleep 8 && weatherboy -u f -l 2451574 ) &  #Delaware Weather
+( sleep 10 && thunderbird ) & #E-mail
+#( sleep 12 && ario ) & #Connects to MPD
+( sleep 12 && nuvolaplayer ) & #Connects to Cloud Music
+( sleep 14 && dropboxd ) & #Starts Dropbox 
+( sleep 16 && pidgin ) & #Instant Messenger

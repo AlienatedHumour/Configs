@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu>
+
+<menu id="apps-accessories-menu" label="Accessories">
+  <item label="Calculator">
+    <action name="Execute">
+      <command>gnome-calculator</command>
+    </action>
+  </item>
+  <item label="Directories">
+    <action name="Execute">
+      <command>thunar</command>
+    </action>
+  </item>
+  <item label="Terminal">
+    <action name="Execute">
+      <command>urxvt -icon /home/zach/.icons/AwOkenDark/clear/128x128/apps/gnome-term.png</command>
+    </action>
+  </item>
+  <item label="Dropbox">
+    <action name="Execute">
+      <command>dropboxd</command>
+    </action>
+  </item>
+  <item label="Photo/Video Capture">
+    <action name="Execute">
+      <command>Cheese</command>
+    </action>
+  </item>
+  <item label="Convert Videos">
+    <action name="Execute">
+      <command>ghb</command>
+    </action>
+  </item>
+</menu>
+
+
+<menu id="apps-office-menu" label="Office">
+  <item label="Text">
+    <action name="Execute">
+      <command>leafpad</command>
+    </action>
+  </item>
+  <item label="Documents">
+    <action name="Execute">
+      <command>abiword</command>
+    </action>
+  </item>
+  <item label="Spreadsheets">
+    <action name="Execute">
+      <command>gnumeric</command>
+    </action>
+  </item>
+</menu>
+
+<menu id="apps-graphics-menu" label="Graphics">
+  <item label="Editor">
+    <action name="Execute">
+      <command>gimp</command>
+    </action>
+  </item>
+  <item label="Viewer">
+    <action name="Execute">
+      <command>viewnior</command>
+    </action>
+  </item>
+  <item label="Diagrams">
+    <action name="Execute">
+      <command>dia</command>
+    </action>
+  </item>
+  <item label="Vectors">
+    <action name="Execute">
+      <command>inkscape</command>
+    </action>
+  </item>
+</menu>
+
+<menu id="apps-games-menu" label="Games">
+  <item label="Amnesia: The Dark Descent">
+    <action name="Execute">
+      <command>/home/zach/games/Amnesia/amnesia</command>
+    </action>
+  </item>
+  <item label="Anomaly: Warzone Earth">
+    <action name="Execute">
+      <command>/home/zach/games/Anomaly/Anomaly</command>
+    </action>
+  </item>
+  <item label="Avadon: The Black Fortress">
+    <action name="Execute">
+      <command>/home/zach/games/avadon/Avadon-amd64</command>
+    </action>
+  </item>
+  <item label="Bastion">
+    <action name="Execute">
+      <command>/home/zach/games/Bastion/Bastion.bin.x86_64</command>
+    </action>
+  </item>
+  <item label="BIT.TRIP.BEAT">
+    <action name="Execute">
+      <command>/home/zach/games/bit.trip.beat/bit.trip.beat</command>
+    </action>
+  </item>
+  <item label="Braid">
+    <action name="Execute">
+      <command>/home/zach/games/braid/braid</command>
+    </action>
+  </item>
+  <item label="Canabalt">
+    <action name="Execute">
+      <command>firefox /home/zach/games/canabalt/Canabalt.html</command>
+    </action>
+  </item>
+  <item label="Cogs">
+    <action name="Execute">
+      <command>/home/zach/games/cogs/Cogs</command>
+    </action>
+  </item>
+  <item label="Edge">
+    <action name="Execute">
+      <command>/home/zach/games/edge/EDGE.bin</command>
+    </action>
+  </item>
+  <item label="Fieldrunners">
+    <action name="Execute">
+      <command>/home/zach/games/fieldrunners/Fieldrunners</command>
+    </action>
+  </item>
+  <item label="FrozenSynapse">
+    <action name="Execute">
+      <command>/home/zach/games/FrozenSynapse/FS</command>
+    </action>
+  </item>
+  <item label="Limbo">
+    <action name="Execute">
+      <command>/home/zach/games/limbo/launch-limbo.sh</command>
+    </action>
+  </item>
+  <item label="Lone Survivor">
+    <action name="Execute">
+      <command>/home/zach/games/lonesurvivor/LoneSurvivor</command>
+    </action>
+  </item>
+  <item label="N Game">
+    <action name="Execute">
+      <command>/home/zach/games/n_v1linux/n_v14</command>
+    </action>
+  </item>
+  <item label="Neverball">
+    <action name="Execute">
+      <command>neverball</command>
+    </action>
+  </item>
+  <item label="Neverputt">
+    <action name="Execute">
+      <command>neverputt</command>
+    </action>
+  </item>
+  <item label="Osmos">
+    <action name="Execute">
+      <command>/home/zach/games/Osmos/Osmos</command>
+    </action>
+  </item>
+  <item label="Psychonauts">
+    <action name="Execute">
+      <command>/home/zach/games/psychonauts/psychonauts</command>
+    </action>
+  </item>
+  <item label="Snuggle Truck">
+    <action name="Execute">
+      <command>/home/zach/games/snuggletruck/SnuggleTruckLinux_executable</command>
+    </action>
+  </item>
+  <item label="Solitaire">
+    <action name="Execute">
+      <command>sol</command>
+    </action>
+  </item>
+  <item label="SpaceChem">
+    <action name="Execute">
+      <command>/home/zach/games/spacechem/spacechem</command>
+    </action>
+  </item>
+  <item label="Spirits">
+    <action name="Execute">
+      <command>/home/zach/games/Spirits/Spirits</command>
+    </action>
+  </item>
+  <item label="Super Meat Boy">
+    <action name="Execute">
+      <command>/home/zach/games/supermeatboy/SuperMeatBoy</command>
+    </action>
+  </item>
+  <item label="Superbrothers: Sword and Sworcery EP">
+    <action name="Execute">
+      <command>/home/zach/games/swordandsworcery/run.sh</command>
+    </action>
+  </item>
+  <item label="Swords and Soldiers">
+    <action name="Execute">
+      <command>/home/zach/games/swordsandsoldiers/SwordsAndSoldiersSetup.bin</command>
+    </action>
+  </item>
+  <item label="Toki Tori">
+    <action name="Execute">
+      <command>/home/zach/games/tokitori/TokiTori.bin</command>
+    </action>
+  </item>
+  <item label="TRAUMA">
+    <action name="Execute">
+      <command>firefox /home/zach/games/trauma/trauma.html</command>
+    </action>
+  </item>
+  <item label="Uplink">
+    <action name="Execute">
+      <command>/home/zach/games/uplink/uplink.bin.x86_64</command>
+    </action>
+  </item>
+  <item label="World of Goo">
+    <action name="Execute">
+      <command>/home/zach/games/WorldofGoo/WorldOfGoo</command>
+    </action>
+  </item>
+  <item label="Zen Bound 2">
+    <action name="Execute">
+      <command>/home/zach/games/zenbound2/zenbound2</command>
+    </action>
+  </item>
+</menu>
+
+<menu id="apps-net-menu" label="Internet">
+  <item label="Browser">
+    <action name="Execute">
+      <command>firefox</command>
+    </action>
+  </item>
+  <item label="Alternate Browser">
+    <action name="Execute">
+      <command>chromium</command>
+    </action>
+  </item>
+  <item label="E-Mail">
+    <action name="Execute">
+      <command>thunderbird</command>
+    </action>
+  </item>
+  <item label="File Transfers">
+    <action name="Execute">
+      <command>filezilla</command>
+    </action>
+  </item>
+  <item label="Instant Messenger">
+    <action name="Execute">
+      <command>pidgin</command>
+    </action>
+  </item>
+  <item label="Skype">
+    <action name="Execute">
+      <command>skype</command>
+    </action>
+  </item>
+  <item label="SSH">
+    <action name="Execute">
+      <command>urxvt -e ssh zach@capital</command>
+    </action>
+  </item>
+  <item label="YouTube">
+    <action name="Execute">
+      <command>minitube</command>
+    </action>
+  </item>
+</menu>
+
+<menu id="apps-mpd-menu" label="MPD">
+  <item label="Control Songs">
+    <action name="Execute">
+      <command>ario</command>
+    </action>
+  </item>
+  <item label="Play Songs">
+    <action name="Execute">
+      <command>deadbeef /home/zach/downloads/mpd.m3u</command>
+    </action>
+  </item>
+</menu>
+
+<menu id="scripts-menu" label="Commands">
+  <item label="Change Background">
+    <action name="Execute">
+      <command>bash /home/zach/scripts/random-background</command>
+    </action>
+  </item>
+  <item label="Move Torrents">
+    <action name="Execute">
+      <command>bash /home/zach/scripts/move-torrents</command>
+    </action>
+  </item>
+  <item label="Remove Added Torrents">
+    <action name="Execute">
+      <command>bash /home/zach/scripts/remove-added-torrents</command>
+    </action>
+  </item>
+  <item label="Set Suspender">
+    <action name="Execute">
+      <command>/usr/bin/suspender 7</command>
+    </action>
+  </item>
+  <item label="Powersave-On">
+    <action name="Execute">
+      <command>sudo powerdown</command>
+    </action>
+  </item>
+  <item label="Powersave-Off">
+    <action name="Execute">
+      <command>sudo powerup</command>
+    </action>
+  </item>
+</menu>
+
+<menu id="system-menu" label="System">
+  <item label="Openbox Configuration Manager">
+    <action name="Execute">
+      <command>obconf</command>
+    </action>
+  </item>
+  <item label="Appearance">
+    <action name="Execute">
+      <command>lxappearance</command>
+    </action>
+  </item>
+  <item label="Reconfigure Openbox">
+    <action name="Reconfigure" />
+  </item>
+  <item label="Task Manager">
+    <action name="Execute">
+      <command>xfce4-taskmanager</command>
+    </action>
+  </item>
+  <item label="Video Settings">
+    <action name="Execute">
+      <command>lxrandr</command>
+    </action>
+  </item>
+  <item label="Input Settings">
+    <action name="Execute">
+      <command>lxinput</command>
+    </action>
+  </item>
+  <separator />
+  <item label="Power Off">
+    <action name="Execute">
+      <command>bash /home/zach/scripts/shutdown</command>
+    </action>
+  </item>
+  <item label="Reboot">
+    <action name="Execute">
+      <command>bash /home/zach/scripts/reboot</command>
+    </action>
+  </item>
+  <item label="Sleep">
+    <action name="Execute">
+      <command>bash /home/zach/scripts/sleep</command>
+    </action>
+  </item>
+</menu>
+
+<menu id="root-menu" label="Openbox 3">
+  <separator label="Applications" />
+  <menu id="apps-accessories-menu"/>
+  <menu id="apps-office-menu"/>
+  <menu id="apps-graphics-menu"/>
+  <menu id="apps-games-menu"/>
+  <menu id="apps-net-menu"/>
+  <separator label="Music"/>
+  <menu id="apps-mpd-menu"/>
+  <item label="Cloud Music">
+    <action name="Execute">
+      <command>nuvolaplayer</command>
+    </action>
+  </item>
+  <separator label="Commands"/>
+  <menu id="scripts-menu"/>
+  <separator label="System" />
+  <menu id="system-menu"/>
+</menu>
+
+</openbox_menu>

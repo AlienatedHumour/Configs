@@ -1,0 +1,547 @@
+<html>
+<head>
+  <title>FB Photo Zoom Options</title>
+  <script type="text/javascript" src="/js/rg3.util.js"></script>
+  <script type="text/javascript" src="/js/rg3.storage.js"></script>
+  <script type="text/javascript">
+    var $ = function(str, el){ return (el || document).querySelector(str); },
+        $$ = function(str, el){ return (el || document).querySelectorAll(str); };
+    
+    function selectValue(select, value){
+      var options, option, selected, i, l;
+      if(select && value){
+        options = select.querySelectorAll('option[value]');
+        l = options.length;
+        selected = select.querySelector('option[value="'+value+'"]');
+        if(selected){
+          for(i = 0; 1 < l; i++){
+            if(options[i] == selected){
+              select.selectedIndex = i;
+              break;
+            }
+          }
+        }
+      }
+    }
+    function saveOptions() {
+      //RG3.storage.set('enabled',!!$('input[name="enabled"]').checked);
+      RG3.storage.set('hideContextMenu',!!$('input[name="hide_context_menu"]').checked);
+      RG3.storage.set('showCaptions',!!$('input[name="show_captions"]').checked);
+      RG3.storage.set('disableTheater',!!$('input[name="disable_theater"]').checked);
+      RG3.storage.set('opacity',$('input[name="opacity"]').value > 100 ? 100 : ($('input[name="opacity"]').value < 10 ? 10 : $('input[name="opacity"]').value));
+      RG3.storage.set('delay',$('input[name="delay"]').value > 5000 ? 5000 : ($('input[name="delay"]').value < 0 ? 0 : $('input[name="delay"]').value));
+      RG3.storage.set('fadeInDuration',$('input[name="fadeInDuration"]').value > 1000 ? 1000 : ($('input[name="fadeInDuration"]').value < 0 ? 0 : $('input[name="fadeInDuration"]').value));
+      RG3.storage.set('fadeOutDuration',$('input[name="fadeOutDuration"]').value > 1000 ? 1000 : ($('input[name="fadeOutDuration"]').value < 0 ? 0 : $('input[name="fadeOutDuration"]').value));
+      RG3.storage.set('enableShortcut', $('select[name="enable_shortcut"]').value);
+      RG3.storage.set('forceZoomKey', $('select[name="force_zoom_key"]').value);
+      RG3.storage.set('forceHideKey', $('select[name="force_hide_key"]').value);
+      RG3.storage.set('debug',!!$('input[name="debug"]').checked);
+      chrome.extension.getBackgroundPage().updateTabs();
+      restoreOptions();
+    }
+    function restoreOptions(){
+      //$('input[name="enabled"]').checked = RG3.storage.get('enabled') !== false;
+      $('input[name="hide_context_menu"]').checked = RG3.storage.get('hideContextMenu') === true;
+      $('input[name="show_captions"]').checked = RG3.storage.get('showCaptions') !== false;
+      $('input[name="disable_theater"]').checked = RG3.storage.get('disableTheater') === true;
+      $('select[name="enable_shortcut"]').value = RG3.storage.get('enableShortcut') || 90;
+      $('select[name="force_zoom_key"]').value = RG3.storage.get('forceZoomKey') || -1;
+      $('select[name="force_hide_key"]').value = RG3.storage.get('forceHideKey') || -1;
+      $('input[name="opacity"]').value = RG3.storage.get('opacity') || 100;
+      $('input[name="delay"]').value = (RG3.storage.get('delay') || 0);
+      $('input[name="fadeInDuration"]').value = (RG3.storage.get('fadeInDuration') || RG3.storage.get('fadeInDuration') === 0 ? RG3.storage.get('fadeInDuration') : 0);
+      $('input[name="fadeOutDuration"]').value = (RG3.storage.get('fadeOutDuration') || RG3.storage.get('fadeOutDuration') === 0 ? RG3.storage.get('fadeOutDuration') : 0);
+      $('input[name="debug"]').checked = RG3.storage.get('debug') === true;
+    }    
+    function defaultOptions(){
+      RG3.storage.set('exposedSettings', false);
+      $('.settings-overlay').style.display = 'block';
+      //$('input[name="enabled"]').checked = true;
+      $('input[name="show_captions"]').checked = true;
+      $('input[name="hide_context_menu"]').checked = false;
+      $('input[name="disable_theater"]').checked = false;
+      $('select[name="enable_shortcut"]').value = 90;
+      $('select[name="force_zoom_key"]').value = -1;
+      $('select[name="force_hide_key"]').value = -1;
+      $('input[name="opacity"]').value = 100;
+      $('input[name="delay"]').value = 0;
+      $('input[name="fadeInDuration"]').value = 0;
+      $('input[name="fadeOutDuration"]').value = 0;
+      $('input[name="debug"]').checked = false;
+      saveOptions();
+    }
+    
+    function exposeSettings(){
+      RG3.storage.set('exposedSettings', true);
+      $('.settings-overlay').style.display = 'none';
+    }
+    
+    function showSection(id){
+      var i,l,navItems = $$('body > nav > *'),
+        sections = $$('body > section');
+      for(i = 0, l = navItems.length; i < l; i++){
+        navItems[i].className = navItems[i].className.replace(/\s?selected/,'');
+        sections[i].className = sections[i].className.replace(/\s?selected/,'');
+      }
+      $('#'+id).className = $('#'+id).className+' selected';
+      $('#'+id+'_nav').className = $('#'+id+'_nav').className+' selected';
+    }
+    
+    
+    RG3.util.addEvent(window, 'hashchange', function(e){
+      showSection(location.hash.replace(/^\#/,''));
+    });
+    
+    RG3.util.addEvent(window, 'load', function(e){
+      restoreOptions();
+      
+      if(RG3.storage.get('exposedSettings')){
+        exposeSettings();
+      }
+      
+      var i,l,navItems = $$('body > nav > a'), sections = $$('body > section');
+      navItems[0].className = navItems[0].className+' selected';
+      sections[0].className = sections[0].className+' selected';
+      if(location.hash){
+        showSection(location.hash.replace(/^\#/,''));
+      }
+      
+      var spans = $$('#settings fieldset label + span');
+      for(i = 0, l = spans.length; i < l; i++){
+        var span = spans[i], input = $('input[type="range"]', span);
+        if(input){
+          var val = RG3.util.newElement('span',{'html':input.value});
+          RG3.util.addEvent(input, 'change', function(e){
+            var input = e.target,
+              span = $('input[type="range"] + span', e.target.parentNode);
+            RG3.util.setProperty(span, 'html',input.value);
+          });
+          span.appendChild(val);
+        }
+      }
+
+
+      RG3.util.addEvent(document.getElementById('viewdebug'), 'click', function(e){
+        chrome.extension.getBackgroundPage().openDebugLog();
+      });
+
+    });
+    
+  </script>
+  <style type="text/css">
+    /**
+     * Reset Based on Yahoo! Inc's reset v2.5.2
+     **/
+    /*html, body {min-height:100%;}*/
+    body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {margin:0; padding:0;}
+    table {border-collapse:collapse; border-spacing:0;}
+    fieldset,img {border:0;}
+    address,caption,cite,code,dfn,em,strong,th,var {font-style:normal; font-weight:normal;}
+    ol,ul {list-style:none;}
+    caption,th {text-align:left;}
+    h1,h2,h3,h4,h5,h6 {font-size:100%; font-weight:normal;}
+    q:before,q:after {content:'';}
+    abbr,acronym {border:0;}
+  
+    strong,b {font-weight:bold;}
+    em,i {font-style:italic;}
+    iframe {background:white;}
+  
+    body {font-size:12px; font-family:"Segoe UI", Frutiger, Tahoma, "Helvetica", "Helvetica Neue", Arial, sans-serif; background:#FFF; color:#1A1A1A; text-align:left;}
+    html {width:100%; height:100%; background:-webkit-gradient(linear, left top, right top, from(#edeff4), color-stop(0.3, #d8dfea), to(#d8dfea)); -webkit-background-size: 6px 100%;}
+    body {background:#FFF; position:relative; z-index:2; width:700px; height:770px; padding:10px 30px; margin:30px auto 0px auto; -webkit-border-radius:0px; -webkit-box-shadow:0px 1px 5px rgba(0,0,0,0.6); /*border:2px solid #FFF; background:-webkit-gradient(linear, left bottom, left top, from(#EEE), color-stop(10%, #FFF), to(#FFF));*/}
+    body > h1 {height:108px; padding-top:25px; padding-left:160px; min-height:128px; margin-bottom:25px; font-size:45px; font-weight:bold; background:transparent url(../images/icon.128.png) no-repeat left center;}
+    body > h1 + p {position:absolute; top:90px; left:0px; font-weight:bold; padding-left:190px; font-size:22px; color:#AAA;}
+    html > head {display:block; pointer-events:none; z-index:1; position:absolute; left:0; top:0; bottom:0px; right:0px; background:-webkit-gradient(linear, left top, left bottom, from(rgba(59,89,152,0.33)), to(rgba(59,89,152,0)));}
+    
+    p {font-size:13px; line-height:1.5; padding-bottom:8px; color:#222;}
+    .box {padding:5px 10px 10px; margin-bottom:25px; -webkit-border-radius:0px; background:#f7f7f7; border:1px solid #CCC; -webkit-box-shadow:inset 0px 0px 2px #FFF;}
+    /*
+    .fb_btn {border:1px solid transparent; text-align:center; margin-right:3px; text-decoration:none; padding:2px 10px; -webkit-border-radius:1px; font-size:11px; font-weight:bold; cursor: pointer; display: inline-block; font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif; color:#000; -webkit-box-shadow:0px 1px 0px rgba(0,0,0,0.1);}
+    .fb_btn:active {background:#dddddd;}
+    .fb_btn.gray {border-color:#999999; color:#000; background:-webkit-gradient(linear, left top, left bottom, from(#FFFFFF), color-stop(0.05, #f5f6f6), to(#e4e4e3));}
+    .fb_btn.gray:active {background:#dddddd;}
+    .fb_btn.blue {border-color:#29447e; color:#FFF; background:-webkit-gradient(linear, left top, left bottom, from(#8a9cc2), color-stop(0.05, #637bad), to(#5972a7));}
+    .fb_btn.blue:active {background:#4f6aa3;}
+    .fb_btn.blue:hover {-webkit-box-shadow:0px 0px 10px #8a9cc2;}
+   */
+
+    .fb_btn {border:1px solid transparent; text-align:center; margin-right:3px; text-decoration:none; padding:2px 10px; -webkit-border-radius:1px; font-size:11px; font-weight:bold; cursor: pointer; display: inline-block; font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif; color:#000; background-image:-webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.1)), to(rgba(255,255,255,0.001)))}
+    .fb_btn:active {background:#dddddd;}
+    .fb_btn.gray {border-color:#9b9b9b #9b9b9b #888888; color:#000; background-color:#e4e4e3; box-shadow:inset 0px 1px 0px #FFF, 0px 1px 0px rgba(0,0,0,0.1); -webkit-box-shadow:inset 0px 1px 0px #FFF, 0px 1px 0px rgba(0,0,0,0.1); -moz-box-shadow:inset 0px 1px 0px #FFF, 0px 1px 0px rgba(0,0,0,0.1); background-image:-webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.4)), to(rgba(255,255,255,0.001)))}
+    .fb_btn.gray:active {background:#dddddd; border-color:#999999; box-shadow:0px 1px 0px rgba(0,0,0,0.1); -webkit-box-shadow:0px 1px 0px rgba(0,0,0,0.1); -moz-box-shadow:0px 1px 0px rgba(0,0,0,0.1);}
+    .fb_btn.blue {border-color:#29447E #29447E #1A356E; color:#FFF; background-color:#5972a7; box-shadow:inset 0px 1px 0px #8a9cc2, 0px 1px 0px rgba(0,0,0,0.1); -webkit-box-shadow:inset 0px 1px 0px #8a9cc2, 0px 1px 0px rgba(0,0,0,0.1); -moz-box-shadow:inset 0px 1px 0px #8a9cc2, 0px 1px 0px rgba(0,0,0,0.1);}
+    .fb_btn.blue:active {background:#4f6aa3; border-color:#29447E; box-shadow:0px 1px 0px rgba(0,0,0,0.1); -webkit-box-shadow:0px 1px 0px rgba(0,0,0,0.1); -moz-box-shadow:0px 1px 0px rgba(0,0,0,0.1);}
+    .fb_btn.green{border-color:#3b6e22 #3b6e22 #2c5115; color:#FFF; background-color:#67a54b; box-shadow:inset 0px 1px 0px #98c286, 0px 1px 0px rgba(0,0,0,0.1); -webkit-box-shadow:inset 0px 1px 0px #98c286, 0px 1px 0px rgba(0,0,0,0.1); -moz-box-shadow:inset 0px 1px 0px #98c286, 0px 1px 0px rgba(0,0,0,0.1);}
+    .fb_btn.green:active {background:#609946; border-color:#3b6e22; box-shadow:0px 1px 0px rgba(0,0,0,0.1); -webkit-box-shadow:0px 1px 0px rgba(0,0,0,0.1); -moz-box-shadow:0px 1px 0px rgba(0,0,0,0.1);}
+                                  
+
+    #welcome > p:first-child,
+    #help > p:first-child {font-size:18px; text-align:center; margin-bottom:15px;}
+    
+    ul .fb_btn {width:100px;}
+    ul > li {padding:0px 10px;}
+    .legal {position:absolute; left:0px; bottom:0px; width:100%; font-size:10px; padding:25px 0px 15px 0px; text-align:center; color:#999;}
+    .legal a {color:#777; text-decoration:underline;}
+    .legal a:hover {color:#333; text-decoration:none;}
+    
+    section#settings {position:relative;}
+    section#settings > p:first-child {margin-bottom:15px;}
+    section#settings .settings-overlay {z-index:5; display:block; position:absolute; left:15px; right:15px; top:85px; background:rgba(240,240,240,0.80); border:1px solid #e2e6ef; text-align:center; -webkit-box-sizing:border-box; height:500px; padding-top:190px;}
+    section#settings fieldset {width:500px; border:0px; margin:auto; padding:0px; margin-bottom:25px; position:relative;}
+    section#settings fieldset:last-child {text-align:right;}
+    section#settings fieldset:last-child button {margin-left:5px;}
+    section#settings fieldset legend,
+    section#settings fieldset label,
+    section#settings fieldset label + span,
+    section#settings fieldset label + span * {font-family:'lucida grande', tahoma, verdana, arial, sans-serif; font-size:11px; color:#555;}
+    section#settings fieldset label small {font-family:inherit; font-size:10px; color:#888;}
+    section#settings fieldset .link {text-decoration:underline; color:#666; cursor:pointer;}
+    section#settings fieldset .link:hover {text-decoration:none; color:#222;}
+    section#settings fieldset .notice {font-size:9px; color:#999; position:absolute; left:0px; top:3px;}
+    section#settings fieldset > legend {display:block; width:100%; font-size:13px; color:#333; font-weight:bold; border-bottom:1px solid #c7cfe0; }
+    section#settings fieldset label {-webkit-box-sizing:border-box; display:block; height:25px; float:left; padding:4px 5px 0px; width:70%; border-bottom:1px solid #e2e6ef; }
+    section#settings fieldset label + span {-webkit-box-sizing:border-box; text-align:center; display:block; height:25px; padding:3px 5px 0px; background:#f8f8f8; overflow:hidden; border-bottom:1px solid #e2e6ef;}
+    section#settings fieldset label + span:after {content:'\0020'; display:block; clear:both; visibility:hidden; line-height:0; height:0;}
+    section#settings fieldset label + span > input {margin-right:4px; vertical-align:middle;}
+    section#settings fieldset label + span > input[type="text"] {width:40px; font-size:11px;}
+    section#settings fieldset label + span > input[type="range"] {width:90px;}
+    section#settings fieldset label + span > input[type="range"] + span {display:inline-block; width:30px; text-align:left;}
+    /*section#settings fieldset label + span > select {text-transform:uppercase;}*/
+    
+    body > nav {display:block; height:20px; -webkit-box-sizing:border-box; border-bottom:1px solid #898989; padding:0px 15px; position:relative; font-size:0px;}
+    body > nav > a {display:inline-block; text-decoration:none; color:#333; height:20px; cursor:pointer; padding:3px 10px; font-family:'lucida grande', tahoma, verdana, arial, sans-serif; font-size:11px; font-weight:bold; -webkit-box-sizing:border-box; border:1px solid #898989; border-right-width:0px; background:#f1f1f1; -webkit-box-shadow:inset 0px 1px 0px #FFF;}
+    body > nav > a:hover {text-decoration:underline;}
+    body > nav > a:last-child {border-right-width:1px;}
+    body > nav > a.selected {color:#FFF; background:#6d84b4; border:1px solid #3b5998; -webkit-box-shadow:none;}
+    body > nav > a.selected + a {border-left-width:0px;}
+    body > section {display:none; height:510px; -webkit-box-sizing:border-box; padding:15px 25px; border:1px solid #d7d7d7; border-top:0px; background:#FFFFFF;}
+    body > section.selected {display:block; overflow:auto;}
+    
+  </style>
+</head>
+<body>
+
+<h1>FB Photo Zoom</h1>
+<p>The best way to view photos on Facebook!</p>
+
+<nav>
+  <a id="welcome_nav" href="#welcome">Welcome</a>
+  <a id="settings_nav" href="#settings">Advanced Settings</a>
+  <a id="help_nav" href="#help">Help</a>
+</nav>
+
+<section id="welcome">
+  <p>Thanks for using FB Photo Zoom!</p>
+
+  <p>Welcome! You have joined over 1 million users who are enhancing their Facebook experience with FB Photo Zoom, a simple, light-weight extension that integrates directly into Facebook so you can see the larger images of photo albums, profile photos and more whenever you hover over a zoomable image!</p>
+  
+  <div class="box" style="margin:10px 0px 20px;">
+    <p><strong>Don't forget to...</strong></p>
+    <ul>
+      <li><p><a class="fb_btn blue" target="_blank" href="http://www.facebook.com/fbphotozoom">Like &amp; Follow</a> Like FB Photo Zoom on Facebook!</p></li>
+      <li><p><a class="fb_btn blue" target="_blank" href="https://chrome.google.com/webstore/detail/elioihkkcdgakfbahdoddophfngopipi">Rate 5 Stars</a> on Google Chrome Extensions</li>
+      <li><p><a class="fb_btn green" target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9MMMX3E7Z8928">Donate</a> to FB Photo Zoom via Paypal</li>
+    </ul>
+  </div>
+  
+  <p style="padding-top:10px;">If you would like to drop a line, please <a target="_blank" href="http://www.regisgaughan.com/contact.html?ext=chrome">contact me via my website</a>. I'm a pretty busy guy and cannot promise I'll respond, but I can promise that I will read your message :)</p>
+
+</section>
+
+<section id="help">
+  <p>Sometime's things just don't go as planned</p>
+    
+  <p><strong>Help!</strong> FB Photo Zoom stopped working!</p>
+  <div style="float:right; width:270px; margin:0px 0px 10px 10px;">
+    <img src="../images/help.app_icon.png" alt="" style="border:1px solid #CCC;" />
+    <p style="font-size:10px; color:#999; text-align:center; padding:5px 0px 0px 0px;">FBPZ's icon will tell you its status in the lower right of the page next to your chat status.</p>
+  </div>
+  <p style="padding-left:10px;">
+    First, make sure that the extension is enabled and that the extension is on from your Chrome Extensions page.
+    When FBPZ is active you should see an icon in the lower right by your chat status, and when you hover it should say "FB Photo Zoom (on)" <em>(see screenshot)</em>.
+    If it says "(off)" simply click the icon to turn FBPZ back on.
+  </p>
+  
+  <p style="padding-top:25px;"><strong>That icon is missing!</strong></p>
+  <p style="padding-left:10px;">
+    If the extension is correctly enabled on your Chrome Extensions page,
+    then in nearly all cases <strong>a hard refresh (hold shift and press refresh) will fix FBPZ</strong>.
+    If you still aren't seeing the icon-box near the chat and you're sure the extension is enabled correctly then something may have gone wrong.
+    Feel free to <a target="_blank" href="http://www.regisgaughan.com/contact.html?ext=chrome">contact me via my website</a> with as much detail as you can
+    regarding the issue (browser version, operating system, Facebook nationality, etc).
+  </p>
+  
+  <div class="box" style="margin:10px 0px;">
+    <p style="text-align:center; margin-bottom:0px; padding-bottom:0px;"><strong>If FBPZ seems broken, 99% of the time it can be fixed by refreshing the page.</strong></p>
+  </div>
+  
+  <p style="padding-top:0px;">Occasionally Facebook might release an update which may break the extension. There is usually a fast turn around if this is the case.</p>
+</section>
+
+<section id="settings">
+  
+  <p>
+    FB Photo Zoom's simplicity is what has made it the most popular Facebook extension on the web.
+    Below I've exposed some advanced (and beta) settings for those who want to tweak FBPZ further.
+    However, I urge you to modify these settings cautiously...
+    I really think you'll like FBPZ as-is anyway :)
+  </p>
+  
+  <div class="settings-overlay">
+    <button class="fb_btn blue" onclick="exposeSettings()">Let me at 'em</button>
+  </div>
+  
+  <fieldset>
+    <legend>General</legend>
+    <!--
+    <label for="enabled">Enable FB Photo Zoom</label>
+    <span>
+      <input type="checkbox" name="enabled" id="enabled" checked="checked" />
+    </span>
+    -->
+    <label for="show_captions">Show Captions (if possible)</label>
+    <span>
+      <input type="checkbox" name="show_captions" id="show_captions" checked="checked" />
+    </span>
+    <label for="hide_context_menu">Hide Right-Context Menu</label>
+    <span>
+      <input type="checkbox" name="hide_context_menu" id="hide_context_menu" />
+    </span>
+    <label for="disable_theater">Disable Facebook's "Photo Theater"</label>
+    <span>
+      <input type="checkbox" name="disable_theater" id="disable_theater" />
+    </span>
+    <label for="opacity">* Zoomed Opacity</label>
+    <span>
+      <input name="opacity" type="range" min="10" max="100" step="5" value="100" />
+    </span>   
+  </fieldset>
+  
+  <fieldset>
+    <legend>Keys &amp; Shortcuts</legend>
+    <label for="enable_shortcut">Toggle Shortcut</label>
+    <span>
+      Ctrl + Shift + 
+      <select name="enable_shortcut">
+        <option value="65">A</option>
+        <option value="66">B</option>
+        <option value="67">C</option>
+        <option value="68">D</option>
+        <option value="69">E</option>
+        <option value="70">F</option>
+        <option value="71">G</option>
+        <option value="72">H</option>
+        <option value="73">I</option>
+        <option value="74">J</option>
+        <option value="75">K</option>
+        <option value="76">L</option>
+        <option value="77">M</option>
+        <option value="78">N</option>
+        <option value="79">O</option>
+        <option value="80">P</option>
+        <option value="81">Q</option>
+        <option value="82">R</option>
+        <option value="83">S</option>
+        <option value="84">T</option>
+        <option value="85">U</option>
+        <option value="86">V</option>
+        <option value="87">W</option>
+        <option value="88">X</option>
+        <option value="89">Y</option>
+        <option value="90" selected="selected">Z</option>
+        <option value="48">0</option>
+        <option value="49">1</option>
+        <option value="50">2</option>
+        <option value="51">3</option>
+        <option value="52">4</option>
+        <option value="53">5</option>
+        <option value="54">6</option>
+        <option value="55">7</option>
+        <option value="56">8</option>
+        <option value="57">9</option>
+        <!--
+        <option value="189">-</option>
+        <option value="187">=</option>
+        <option value="219">[</option>
+        <option value="221">]</option>
+        <option value="220">\</option>
+        <option value="186">;</option>
+        <option value="222">'</option>
+        <option value="188">,</option>
+        <option value="190">.</option>
+        <option value="191">/</option>
+        <option value="192">`</option>
+        -->
+      </select>
+    </span>   
+    <label for="force_zoom_key">When off, force zoom if I'm holding down</label>
+    <span>
+      <select name="force_zoom_key">
+        <option value="-1" selected="selected">None</option>
+        <option value="16">Shift</option>
+        <option value="17">Ctrl</option>
+        <option value="65">A</option>
+        <option value="66">B</option>
+        <option value="67">C</option>
+        <option value="68">D</option>
+        <option value="69">E</option>
+        <option value="70">F</option>
+        <option value="71">G</option>
+        <option value="72">H</option>
+        <option value="73">I</option>
+        <option value="74">J</option>
+        <option value="75">K</option>
+        <option value="76">L</option>
+        <option value="77">M</option>
+        <option value="78">N</option>
+        <option value="79">O</option>
+        <option value="80">P</option>
+        <option value="81">Q</option>
+        <option value="82">R</option>
+        <option value="83">S</option>
+        <option value="84">T</option>
+        <option value="85">U</option>
+        <option value="86">V</option>
+        <option value="87">W</option>
+        <option value="88">X</option>
+        <option value="89">Y</option>
+        <option value="90">Z</option>
+        <option value="48">0</option>
+        <option value="49">1</option>
+        <option value="50">2</option>
+        <option value="51">3</option>
+        <option value="52">4</option>
+        <option value="53">5</option>
+        <option value="54">6</option>
+        <option value="55">7</option>
+        <option value="56">8</option>
+        <option value="57">9</option>
+        <!--
+        <option value="189">-</option>
+        <option value="187">=</option>
+        <option value="219">[</option>
+        <option value="221">]</option>
+        <option value="220">\</option>
+        <option value="186">;</option>
+        <option value="222">'</option>
+        <option value="188">,</option>
+        <option value="190">.</option>
+        <option value="191">/</option>
+        <option value="192">`</option>
+        -->
+      </select>
+    </span>  
+    <label for="force_hide_key">When on, temporarily hide if I'm holding down</label>
+    <span>
+      <select name="force_hide_key">
+        <option value="-1" selected="selected">None</option>
+        <option value="16">Shift</option>
+        <option value="17">Ctrl</option>
+        <option value="65">A</option>
+        <option value="66">B</option>
+        <option value="67">C</option>
+        <option value="68">D</option>
+        <option value="69">E</option>
+        <option value="70">F</option>
+        <option value="71">G</option>
+        <option value="72">H</option>
+        <option value="73">I</option>
+        <option value="74">J</option>
+        <option value="75">K</option>
+        <option value="76">L</option>
+        <option value="77">M</option>
+        <option value="78">N</option>
+        <option value="79">O</option>
+        <option value="80">P</option>
+        <option value="81">Q</option>
+        <option value="82">R</option>
+        <option value="83">S</option>
+        <option value="84">T</option>
+        <option value="85">U</option>
+        <option value="86">V</option>
+        <option value="87">W</option>
+        <option value="88">X</option>
+        <option value="89">Y</option>
+        <option value="90">Z</option>
+        <option value="48">0</option>
+        <option value="49">1</option>
+        <option value="50">2</option>
+        <option value="51">3</option>
+        <option value="52">4</option>
+        <option value="53">5</option>
+        <option value="54">6</option>
+        <option value="55">7</option>
+        <option value="56">8</option>
+        <option value="57">9</option>
+        <!--
+        <option value="189">-</option>
+        <option value="187">=</option>
+        <option value="219">[</option>
+        <option value="221">]</option>
+        <option value="220">\</option>
+        <option value="186">;</option>
+        <option value="222">'</option>
+        <option value="188">,</option>
+        <option value="190">.</option>
+        <option value="191">/</option>
+        <option value="192">`</option>
+        -->
+      </select>
+    </span>  
+  </fieldset>
+  
+  <fieldset>
+    <legend>Delays</legend>
+    <label for="delay">Delay (0-5000)</label>
+    <span>
+      <input name="delay" type="text" value="0" /> milliseconds     
+    </span>
+    <label for="fadeInDuration">* Fade In (0-1000)</label>
+    <span>
+      <input name="fadeInDuration" type="text" value="0" /> milliseconds      
+    </span>
+    <label for="fadeOutDuration">* Fade Out  (0-1000)</label>
+    <span>
+      <input name="fadeOutDuration" type="text" value="0" /> milliseconds      
+    </span>  
+  </fieldset>
+  <fieldset style="display:none;">
+    <legend>Debug</legend>
+    <label for="show_captions">
+      Capture Debug Log
+      <small>(<span class="text link" id="viewdebug">View</span>)</small>
+    </label>
+    <span>
+      <input type="checkbox" name="debug" id="debug" />
+    </span>
+  </fieldset>
+  <fieldset>
+    <span class="notice">* May impact performance on slower machines</span>
+    <button class="fb_btn gray" onclick="defaultOptions()">Reset to Default</button>
+    <button class="fb_btn blue" onclick="saveOptions()">Save</button>
+  </fieldset>
+
+</section>
+
+<p class="legal">FB Photo Zoom is not endorsed by Facebook.<br />
+  Everything is &copy; Copyright by Regis Gaughan, unless otherwise indicated.<br />
+  <a target="_blank" href="http://www.regisgaughan.com/contact.html?ext=chrome">Contact</a> | 
+  <a target="_blank" href="http://www.facebook.com/fbphotozoom">Facebook</a> | 
+  <a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9MMMX3E7Z8928">Donate</a> via PayPal
+</p>
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-22980224-1']);
+      _gaq.push(['_trackPageview']);
+      _gaq.push(['_setSampleRate', '1']); //sets sampling rate to 1%
+      
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = 'https://ssl.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+</body>
+</html>

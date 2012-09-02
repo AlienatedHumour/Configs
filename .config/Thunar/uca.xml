@@ -1,0 +1,28 @@
+<?xml encoding="UTF-8" version="1.0"?>
+<actions>
+<action>
+	<icon>Terminal</icon>
+	<name>Open Terminal Here</name>
+	<command>urxvt -icon /home/zach/.icons/AwOkenDark/clear/128x128/apps/gnome-term.png -cd %f</command>
+	<description>Example for a custom action</description>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon>gtk-zoom-fit</icon>
+	<name>Make a Thumbnail</name>
+	<command>convert %f -resize 250x250 /home/zach/thumbnails/thumbnail-%N</command>
+	<description>Resizes image into a forum compatible size</description>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon>emblem-symbolic-link</icon>
+	<name>Open Folder as Root</name>
+	<command>sudo thunar %d</command>
+	<description>Opens current directory with root privileges.</description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+</actions>

@@ -1,0 +1,17 @@
+{
+   "background": {
+      "scripts": [ "background.js", "unsocialize.js" ]
+   },
+   "description": "Provides a right-click menu item for direct links, bypassing\n    Facebook's \"social readers\"",
+   "icons": {
+      "128": "us_128.png",
+      "16": "us_16.png",
+      "48": "us_48.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCnqfg+e7WW/KwZh+/nzoZQGvx+q0hlcZuyPt4JC/Wt2jhVYNB014KdYzUxHNVaeYdJea05I3txlz2iwLGy3MNxLcF+j38gr3N2/g6rtfOg2veOYQpLdsu/4oTndh/k7w209mKGdFny/1xI2v3tzrtSIs5pJJ9NvfIGqthBVCAZgwIDAQAB",
+   "manifest_version": 2,
+   "name": "Unsocialize: The Link Unsocializer",
+   "permissions": [ "contextMenus", "tabs" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "1.2.3"
+}
