@@ -1,0 +1,10 @@
+xterm*faceName:		ubuntumono:regular:pixelsize=12
+xterm*background:	#262729
+xterm*foreground:	#6c9eab
+xterm*geometry:		105x30
+URxvt.geometry:		105x30
+URxvt.depth:		32
+URxvt.scrollBar:	false
+URxvt.background:	[100]#262729
+URxvt.foreground:	#6c9eab
+;URxvt.font:		xft:dejavusansmono:regular:size=8
